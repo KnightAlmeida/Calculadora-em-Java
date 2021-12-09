@@ -1,0 +1,72 @@
+package provajunio;
+
+import java.util.Scanner;
+
+public class ProvaJunioQ1 {
+
+	public ProvaJunioQ1() {
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner in = new Scanner(System.in);
+
+		int opc = 0;
+		float salario;
+		float aumento;
+		float ferias;
+		float feriasAdicional;
+		int meses;
+
+		while (opc != 4) {
+
+			System.out.println("--------------Menu de opções-------------- " + "\n \n Escolha uma opção:"
+					+ "\n \n 1- Novo salário" + "\n 2- Férias" + "\n 3- Décimo terceiro" + "\n 4- Sair");
+
+			opc = in.nextInt();
+
+			switch (opc) {
+
+			case 1:
+				System.out.println("Informe o valor do seu salário: ");
+				salario = in.nextFloat();
+				if (salario <= 1100) {
+					aumento = salario + (salario * 15 / 100);
+					System.out.println("Seu novo salário com aumento é de " + aumento);
+				}
+
+				else if (salario >= 1101 && salario <= 2600) {
+					aumento = salario + (salario * 10 / 100);
+					System.out.println("Seu novo salário com aumento é de " + aumento);
+				}
+
+				else if (salario >= 2600) {
+					aumento = salario + (salario * 5 / 100);
+					System.out.println("Seu novo salário com aumento é de " + aumento);
+				}
+				break;
+
+			case 2:
+				System.out.println("Informe o valor do seu salário: ");
+				ferias = in.nextFloat();
+				feriasAdicional = ferias + (ferias / 3);
+				System.out.println("O valor de suas férias é: " + feriasAdicional);
+				break;
+
+			case 3:
+				System.out.println("Informe o valor do seu salário: ");
+				salario = in.nextFloat();
+				System.out.println("Informe a quantidade de meses trabalhados: ");
+				meses = in.nextInt();
+				System.out.println("O valor do seu décimo é de: " + (salario * meses / 12));
+				break;
+
+			default:
+				System.out.println("Encerrando o programa.");
+				break;
+
+			}
+		}
+	}
+}
